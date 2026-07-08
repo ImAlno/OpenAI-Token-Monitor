@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+.pytest_cache/
+# local ledger (never commit usage data)
+.openai-token-monitor/
+spend.jsonl
+# superpowers skill folder (repo-local convention)
+docs/superpowers/
