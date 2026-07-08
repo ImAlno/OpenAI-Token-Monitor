@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openai-token-monitor"
+version = "0.1.0"
+description = "A self-metering guardrail that counts and caps your OpenAI token usage against a daily (UTC) cap."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "ImAlno" }]
+keywords = ["openai", "tokens", "budget", "cost", "guardrail", "rate-limit"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+]
+dependencies = ["openai>=1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+otm = "openai_token_monitor.cli:main"
+openai-token-monitor = "openai_token_monitor.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ImAlno/OpenAI-Token-Monitor"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/openai_token_monitor"]
